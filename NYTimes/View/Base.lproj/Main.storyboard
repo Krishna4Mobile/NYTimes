@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="03b-rS-Wf0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--NY Times Most Popular-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NYTimes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OwM-eb-DP3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="mt8-mO-2fS"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uJr-NH-xjl"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OwM-eb-DP3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C0c-Ay-efN"/>
+                            <constraint firstItem="OwM-eb-DP3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Pbh-Sk-vx7"/>
+                            <constraint firstItem="OwM-eb-DP3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rg6-gt-m8i"/>
+                            <constraint firstItem="OwM-eb-DP3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="q4l-6W-s5H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="NY Times Most Popular" id="xgP-rF-74l">
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="thl-vQ-UDf">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xOT-n0-xeF">
+                                    <rect key="frame" x="329" y="7" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="ic_more" backgroundImage="ic_more"/>
+                                    <state key="highlighted" image="ic_more" backgroundImage="ic_more"/>
+                                    <connections>
+                                        <action selector="moreButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hzV-Nb-uCD"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="nQA-Ti-sF7">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QS8-FA-2pl">
+                                    <rect key="frame" x="297" y="10" width="24" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="ic_search" backgroundImage="ic_search"/>
+                                    <state key="highlighted" image="ic_search" backgroundImage="ic_search"/>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nyListTableview" destination="OwM-eb-DP3" id="m62-Do-xaJ"/>
+                        <segue destination="wZu-79-Yk8" kind="push" identifier="NYDetailIdentifier" id="xTU-at-mvM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="479.19999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--Newyork Times Detail-->
+        <scene sceneID="4Ya-2y-Sa6">
+            <objects>
+                <viewController id="wZu-79-Yk8" customClass="NYDetailViewController" customModule="NYTimes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jxf-gZ-WAi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Epm-8A-TbP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="wZu-79-Yk8" id="kC7-NF-1ml"/>
+                                    <outlet property="delegate" destination="wZu-79-Yk8" id="Da7-zi-HNs"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Epm-8A-TbP" firstAttribute="top" secondItem="yij-oO-rnB" secondAttribute="top" id="3ld-wC-xqZ"/>
+                            <constraint firstItem="Epm-8A-TbP" firstAttribute="trailing" secondItem="yij-oO-rnB" secondAttribute="trailing" id="WUP-SU-PUw"/>
+                            <constraint firstItem="Epm-8A-TbP" firstAttribute="bottom" secondItem="yij-oO-rnB" secondAttribute="bottom" id="bUZ-vv-WmS"/>
+                            <constraint firstItem="Epm-8A-TbP" firstAttribute="leading" secondItem="yij-oO-rnB" secondAttribute="leading" id="fBX-LK-ldj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yij-oO-rnB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Newyork Times Detail" id="5OA-YE-3rW">
+                        <barButtonItem key="backBarButtonItem" title="    " id="gQ2-PL-9z2"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detailTableView" destination="Epm-8A-TbP" id="Vi9-F3-slX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKa-tB-d9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1565.5999999999999" y="194.75262368815595"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KAE-QA-cEb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="03b-rS-Wf0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K2M-vu-G8N">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="380-we-foJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lDV-JK-HD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-326" y="157"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_more" width="24" height="24"/>
+        <image name="ic_search" width="24" height="24"/>
+    </resources>
+</document>
